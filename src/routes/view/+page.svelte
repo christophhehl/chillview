@@ -79,7 +79,13 @@
 
 	{#if backgrounds.length !== 0}
 		{#key index}
-			<video autoplay muted loop playsinline>
+			<video
+				autoplay
+				muted
+				loop
+				playsinline
+				class="fixed top-0 left-0 -z-10 h-screen w-screen object-cover"
+			>
 				<source src={backgrounds[index]} type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
