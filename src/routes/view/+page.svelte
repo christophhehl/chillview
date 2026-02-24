@@ -19,6 +19,9 @@
 			'user-read-playback-state'
 		]);
 
+		// Its important to run this once before starting the interval to have enough time to finish the authorization.
+		updateSong();
+
 		apiLoaded = true;
 
 		async function updateSong() {
