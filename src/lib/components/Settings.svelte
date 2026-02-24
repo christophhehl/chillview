@@ -42,6 +42,7 @@
 					<Button
 						onclick={() => {
 							backgrounds.push(newBackgroundSrc);
+							localStorage.setItem('background_sources', JSON.stringify(backgrounds));
 							newBackgroundSrc = '';
 						}}>add</Button
 					>

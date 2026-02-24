@@ -54,6 +54,12 @@
 	let backgrounds: string[] = $state([]);
 	let index = $state(0);
 
+	let background_storage = localStorage.getItem('background_sources');
+	if (background_storage !== null) {
+		let background_sources = JSON.parse(background_storage);
+		backgrounds = background_sources;
+	}
+
 	function handleKeydown(event) {
 		if (event.key === 'ArrowRight') {
 			index = (index + 1) % backgrounds.length;
