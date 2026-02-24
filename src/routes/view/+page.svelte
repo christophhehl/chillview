@@ -15,7 +15,11 @@
 	}
 
 	function start_spotify_sync(spotifyClientId: string) {
-		const sdk = SpotifyApi.withUserAuthorization(spotifyClientId, 'http://127.0.0.1:1420/view', [
+		let redirectUri =
+			window.location.hostname === '127.0.0.1'
+				? 'http://127.0.0.1:1420/view'
+				: 'https://christophhehl.github.io/chillview/view';
+		const sdk = SpotifyApi.withUserAuthorization(spotifyClientId, redirectUri, [
 			'user-read-playback-state'
 		]);
 
